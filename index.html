@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siddhi Amare | Portfolio</title>
+  <meta name="description" content="Siddhi Amare portfolio for projects, skills, experience, certifications, GitHub, LinkedIn, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #101114;
+      --panel: #1c1d22;
+      --panel-2: #22242a;
+      --line: #363841;
+      --text: #f5f5f6;
+      --muted: #b9bbc6;
+      --soft: #858895;
+      --gold: #f4c95d;
+      --gold-2: #d99c2b;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(244, 201, 93, 0.09), transparent 28rem),
+        radial-gradient(circle at bottom right, rgba(72, 139, 255, 0.08), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Poppins, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      width: min(1200px, calc(100% - 32px));
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr);
+      gap: 24px;
+      margin: 0 auto;
+      padding: 52px 0;
+    }
+
+    .sidebar,
+    .content-section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(28, 29, 34, 0.94);
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 28px;
+      align-self: start;
+      padding: 28px;
+    }
+
+    .avatar {
+      width: 112px;
+      height: 112px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #30323a, #17181d);
+      color: var(--gold);
+      font-size: 2.3rem;
+      font-weight: 700;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .name {
+      color: var(--text);
+      font-size: 1.7rem;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    .role {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 6px 13px;
+      border-radius: 8px;
+      background: var(--panel-2);
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .separator {
+      height: 1px;
+      margin: 26px 0;
+      background: var(--line);
+    }
+
+    .contact-list,
+    .social-list,
+    .nav-list,
+    .service-list,
+    .project-list,
+    .timeline-list,
+    .cert-list,
+    .skills-list {
+      list-style: none;
+    }
+
+    .resume-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .resume-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 15px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel-2);
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .resume-link:hover {
+      border-color: rgba(244, 201, 93, 0.48);
+      color: var(--gold);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+    }
+
+    .icon-box {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #24262d, #191a1f);
+      color: var(--gold);
+      font-size: 1.12rem;
+    }
+
+    .contact-title {
+      color: var(--soft);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .contact-link,
+    address {
+      display: block;
+      overflow-wrap: anywhere;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-style: normal;
+    }
+
+    .contact-link:hover,
+    .social-link:hover,
+    .navbar-link:hover,
+    .project-link:hover {
+      color: var(--gold);
+    }
+
+    .social-list {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .social-link {
+      color: var(--soft);
+      font-size: 1.25rem;
+      transition: color 0.2s ease;
+    }
+
+    .main-content {
+      min-width: 0;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 28px;
+      z-index: 5;
+      margin-bottom: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(34, 36, 42, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-list {
+      display: flex;
+      justify-content: flex-end;
+      gap: 4px;
+      padding: 12px;
+    }
+
+    .navbar-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .navbar-link.active,
+    .navbar-link:focus-visible {
+      background: rgba(244, 201, 93, 0.11);
+      color: var(--gold);
+      outline: none;
+    }
+
+    .content-section {
+      margin-bottom: 24px;
+      padding: 34px;
+      scroll-margin-top: 120px;
+    }
+
+    .article-title {
+      position: relative;
+      margin-bottom: 26px;
+      color: var(--text);
+      font-size: clamp(1.9rem, 4vw, 2.4rem);
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    .article-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 42px;
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-2));
+    }
+
+    .about-text {
+      display: grid;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section-title {
+      margin: 30px 0 18px;
+      color: var(--text);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .service-list,
+    .project-list,
+    .cert-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service-item,
+    .project-item,
+    .cert-item,
+    .skills-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(39, 41, 48, 0.94), rgba(28, 29, 34, 0.94));
+    }
+
+    .service-item {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 14px;
+      padding: 20px;
+    }
+
+    .service-item h4,
+    .project-title,
+    .timeline-item-title,
+    .cert-item h4,
+    .skills-card h3 {
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .service-item p,
+    .project-category,
+    .project-item p,
+    .timeline-text,
+    .cert-item p {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .project-item {
+      overflow: hidden;
+    }
+
+    .project-link {
+      display: grid;
+      min-height: 100%;
+      padding: 20px;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .project-link:hover {
+      transform: translateY(-3px);
+    }
+
+    .project-icon {
+      width: 100%;
+      height: 132px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(244, 201, 93, 0.18), rgba(79, 139, 255, 0.12)),
+        #17181d;
+      color: var(--gold);
+      font-size: 2rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 8px;
+      background: rgba(244, 201, 93, 0.1);
+      color: #f1d487;
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+
+    .timeline {
+      margin-top: 28px;
+    }
+
+    .title-wrapper {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .timeline-list {
+      margin-left: 22px;
+      border-left: 1px solid var(--line);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 24px 26px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: -6px;
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(244, 201, 93, 0.12);
+    }
+
+    .timeline-item span {
+      display: block;
+      margin-top: 4px;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .skills-card {
+      padding: 20px;
+    }
+
+    .cert-item {
+      padding: 20px;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .contact-panel a,
+    .contact-panel span {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel-2);
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-panel a:hover {
+      color: var(--gold);
+    }
+
+    footer {
+      color: var(--soft);
+      font-size: 0.78rem;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      main {
+        grid-template-columns: 1fr;
+        padding-top: 28px;
+      }
+
+      .sidebar,
+      .navbar {
+        position: static;
+      }
+
+      .sidebar {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .profile {
+        text-align: left;
+      }
+
+      .avatar {
+        margin: 0;
+      }
+
+      .sidebar .separator,
+      .contact-list,
+      .social-list {
+        grid-column: 1 / -1;
+      }
+
+      .contact-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-list {
+        justify-content: flex-start;
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: 680px) {
+      main {
+        width: min(100% - 22px, 1200px);
+      }
+
+      .sidebar,
+      .content-section {
+        padding: 22px;
+        border-radius: 16px;
+      }
+
+      .sidebar,
+      .service-list,
+      .project-list,
+      .cert-list,
+      .skills-list,
+      .contact-list,
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .profile {
+        text-align: center;
+      }
+
+      .avatar {
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <aside class="sidebar" aria-label="Profile sidebar">
+      <div class="avatar" aria-hidden="true">SA</div>
+
+      <div class="profile">
+        <h1 class="name">Siddhi Amare</h1>
+        <p class="role">Data Analyst | Python Developer</p>
+      </div>
+
+      <div class="separator"></div>
+
+      <ul class="contact-list">
+        <li class="contact-item">
+          <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+          <div>
+            <p class="contact-title">Email</p>
+            <a class="contact-link" href="mailto:siddhi.amare04@gmail.com">siddhi.amare04@gmail.com</a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+          <div>
+            <p class="contact-title">Phone</p>
+            <a class="contact-link" href="tel:+919527402045">+91 95274-02045</a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="icon-box"><ion-icon name="calendar-outline"></ion-icon></div>
+          <div>
+            <p class="contact-title">Status</p>
+            <span class="contact-link">Seeking Data Analyst or Data Science Roles</span>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+          <div>
+            <p class="contact-title">Location</p>
+            <address>Thane, Maharashtra, India</address>
+          </div>
+        </li>
+      </ul>
+
+      <div class="separator"></div>
+
+      <ul class="social-list" aria-label="Social links">
+        <li><a class="social-link" href="https://github.com/siddhiamare" target="_blank" rel="noreferrer" aria-label="GitHub"><ion-icon name="logo-github"></ion-icon></a></li>
+        <li><a class="social-link" href="https://linkedin.com/in/siddhi-amare" target="_blank" rel="noreferrer" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li><a class="social-link" href="mailto:siddhi.amare04@gmail.com" aria-label="Email"><ion-icon name="mail-outline"></ion-icon></a></li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <nav class="navbar" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a class="navbar-link active" href="#about">About</a></li>
+          <li><a class="navbar-link" href="#resume">Resume</a></li>
+          <li><a class="navbar-link" href="#portfolio">Portfolio</a></li>
+          <li><a class="navbar-link" href="#certifications">Certifications</a></li>
+          <li><a class="navbar-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section class="content-section" id="about">
+        <h2 class="article-title">About me</h2>
+        <div class="about-text">
+          <p>Results-driven Data Analyst and final-year Computer Engineering student with hands-on experience in Python, Power BI, Machine Learning, and AWS Cloud.</p>
+          <p>I have completed certifications from Deloitte, AWS, and industry-recognized programs in Generative AI and Responsible AI. My projects include placement prediction, student grade prediction, sales performance analytics, job placement dashboards, API-based tools, and security-focused utilities.</p>
+        </div>
+
+        <h3 class="section-title">What I do</h3>
+        <ul class="service-list">
+          <li class="service-item">
+            <div class="icon-box"><ion-icon name="bar-chart-outline"></ion-icon></div>
+            <div>
+              <h4>Data Visualization</h4>
+              <p>Interactive dashboards, KPI reporting, DAX measures, trend analysis, and business-ready visuals.</p>
+            </div>
+          </li>
+          <li class="service-item">
+            <div class="icon-box"><ion-icon name="analytics-outline"></ion-icon></div>
+            <div>
+              <h4>Machine Learning</h4>
+              <p>EDA, feature engineering, classification models, validation, and prediction interfaces.</p>
+            </div>
+          </li>
+          <li class="service-item">
+            <div class="icon-box"><ion-icon name="code-slash-outline"></ion-icon></div>
+            <div>
+              <h4>Frontend & APIs</h4>
+              <p>JavaScript apps, REST API integration, responsive pages, and smooth data interactions.</p>
+            </div>
+          </li>
+          <li class="service-item">
+            <div class="icon-box"><ion-icon name="cloud-outline"></ion-icon></div>
+            <div>
+              <h4>Cloud & Tools</h4>
+              <p>AWS basics, GitHub workflows, MySQL, ETL cleaning, and practical automation.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="resume">
+        <h2 class="article-title">Resume</h2>
+
+        <div class="resume-links">
+          <a class="resume-link" href="#contact">
+            <ion-icon name="mail-outline"></ion-icon>
+            For Resume, Contact Me
+          </a>
+        </div>
+
+        <div class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="school-outline"></ion-icon></div>
+            <h3 class="section-title" style="margin: 0;">Education</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="timeline-item-title">Bachelor of Engineering - Computer Engineering</h4>
+              <span>Konkan Gyanpeeth College of Engineering, Karjat | Jun 2026 Expected</span>
+              <p class="timeline-text">GPA: 7.95 / 10</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="briefcase-outline"></ion-icon></div>
+            <h3 class="section-title" style="margin: 0;">Experience</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="timeline-item-title">JavaScript Developer Intern</h4>
+              <span>Codesprint Technologies | Aug 2025 - Sep 2025 | Thane</span>
+              <p class="timeline-text">Developed a real-time multi-currency converter for 150+ currencies using JavaScript and RESTful APIs, reduced processing time by 30%, optimized front-end performance, and wrote Python scripts for automated data validation and transformation.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="timeline-item-title">Power BI Data Analyst Intern</h4>
+              <span>Microsoft Virtual Internship Program | 2025 | 4 Weeks | Remote</span>
+              <p class="timeline-text">Completed Power BI training covering data modeling, DAX calculations, Power Query, relationship modeling, interactive dashboard design, Power BI Service, and business intelligence reporting.</p>
+            </li>
+          </ol>
+        </div>
+
+        <h3 class="section-title">Skills</h3>
+        <ul class="skills-list">
+          <li class="skills-card">
+            <h3>Data Analysis & Visualization</h3>
+            <div class="tags">
+              <span class="tag">Power BI</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">DAX</span>
+              <span class="tag">Data Validation</span>
+              <span class="tag">Trend Analysis</span>
+              <span class="tag">Power Query</span>
+              <span class="tag">Dashboards</span>
+            </div>
+          </li>
+          <li class="skills-card">
+            <h3>Machine Learning & AI</h3>
+            <div class="tags">
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">EDA</span>
+              <span class="tag">Classification</span>
+              <span class="tag">Feature Engineering</span>
+              <span class="tag">Generative AI</span>
+            </div>
+          </li>
+          <li class="skills-card">
+            <h3>Programming</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">Automation Workflows</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">Flask</span>
+            </div>
+          </li>
+          <li class="skills-card">
+            <h3>Cloud, Database & Tools</h3>
+            <div class="tags">
+              <span class="tag">MySQL</span>
+              <span class="tag">ETL</span>
+              <span class="tag">Data Transformation</span>
+              <span class="tag">Report Development</span>
+              <span class="tag">AWS Cloud</span>
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="portfolio">
+        <h2 class="article-title">Portfolio</h2>
+        <ul class="project-list">
+          <li class="project-item">
+            <a class="project-link" href="https://github.com/siddhiamare" target="_blank" rel="noreferrer">
+              <div class="project-icon"><ion-icon name="school-outline"></ion-icon></div>
+              <h3 class="project-title">Campus Placement Prediction System</h3>
+              <p class="project-category">Machine Learning</p>
+              <p>End-to-end classification model predicting placement outcomes with 95%+ accuracy using Random Forest, Logistic Regression, EDA, feature engineering, cross-validation, and a real-time Streamlit/Flask interface.</p>
+            </a>
+          </li>
+          <li class="project-item">
+            <a class="project-link" href="https://github.com/siddhiamare" target="_blank" rel="noreferrer">
+              <div class="project-icon"><ion-icon name="trending-up-outline"></ion-icon></div>
+              <h3 class="project-title">Sales Performance Analysis Dashboard</h3>
+              <p class="project-category">Power BI</p>
+              <p>Dashboard for sales KPIs, revenue trends, regional performance, DAX measures, and drill-through reports.</p>
+            </a>
+          </li>
+          <li class="project-item">
+            <a class="project-link" href="https://github.com/siddhiamare" target="_blank" rel="noreferrer">
+              <div class="project-icon"><ion-icon name="stats-chart-outline"></ion-icon></div>
+              <h3 class="project-title">Student Grade Prediction System</h3>
+              <p class="project-category">Machine Learning</p>
+              <p>ML model for predicting student academic performance using data preprocessing, exploratory analysis, feature selection, and model evaluation.</p>
+            </a>
+          </li>
+          <li class="project-item">
+            <a class="project-link" href="https://github.com/siddhiamare" target="_blank" rel="noreferrer">
+              <div class="project-icon"><ion-icon name="people-outline"></ion-icon></div>
+              <h3 class="project-title">Job Placement Analytics Dashboard</h3>
+              <p class="project-category">Python & Tableau</p>
+              <p>Placement trend analysis using 500+ records, automated cleaning, and department-wise hiring visuals.</p>
+            </a>
+          </li>
+          <li class="project-item">
+            <a class="project-link" href="https://github.com/siddhiamare" target="_blank" rel="noreferrer">
+              <div class="project-icon"><ion-icon name="cash-outline"></ion-icon></div>
+              <h3 class="project-title">Multi-Currency Conversion & Exchange Rate Tracker</h3>
+              <p class="project-category">JavaScript & REST APIs</p>
+              <p>API-based app for 150+ currencies with live exchange rate refresh and smooth DOM interactions.</p>
+            </a>
+          </li>
+          <li class="project-item">
+            <a class="project-link" href="https://github.com/siddhiamare" target="_blank" rel="noreferrer">
+              <div class="project-icon"><ion-icon name="shield-checkmark-outline"></ion-icon></div>
+              <h3 class="project-title">Password Strength Analyser</h3>
+              <p class="project-category">Security Utility</p>
+              <p>Rule-based evaluator for entropy, character variety, common patterns, and real-time password feedback.</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="certifications">
+        <h2 class="article-title">Certifications</h2>
+        <ul class="cert-list">
+          <li class="cert-item"><h4>Deloitte Data Analytics Job Simulation</h4><p>Deloitte via Forage | 2025</p></li>
+          <li class="cert-item"><h4>AWS Skills to Jobs - Cloud & Generative AI Capstone Program</h4><p>Amazon Web Services | 2025</p></li>
+          <li class="cert-item"><h4>AWS Training & Certification - Responsible AI Practices</h4><p>Amazon Web Services | 2025</p></li>
+          <li class="cert-item"><h4>Power BI for Business Applications</h4><p>Emerging Technologies Internship Program | 20 hours</p></li>
+          <li class="cert-item"><h4>Sales Analysis Dashboard - Power BI & DAX</h4><p>Analyx Academy | 2025</p></li>
+          <li class="cert-item"><h4>Cloud Technologies</h4><p>Infosys Certification | 2026</p></li>
+          <li class="cert-item"><h4>Data Science </h4><p>Infosys Certification | 2026</p></li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="contact">
+        <h2 class="article-title">Contact</h2>
+        <div class="contact-panel">
+          <a href="mailto:siddhi.amare04@gmail.com"><ion-icon name="mail-outline"></ion-icon>siddhi.amare04@gmail.com</a>
+          <a href="tel:+919527402045"><ion-icon name="call-outline"></ion-icon>+91 95274-02045</a>
+          <a href="https://linkedin.com/in/siddhi-amare" target="_blank" rel="noreferrer"><ion-icon name="logo-linkedin"></ion-icon>LinkedIn</a>
+          <a href="https://github.com/siddhiamare" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon>GitHub</a>
+          <span><ion-icon name="location-outline"></ion-icon>Thane, Maharashtra, India</span>
+        </div>
+      </section>
+
+      <footer>
+        <p>(c) 2026 Siddhi Amare | Data Analyst & ML Engineer</p>
+      </footer>
+    </div>
+  </main>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
